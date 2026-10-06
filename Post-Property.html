@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+```
+<title>Post New Property</title>
+
+<style>
+
+    body {
+        font-family: Arial;
+        background-image: url("project-background1.avif");
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    .form-container {
+
+        width: 550px;
+        margin: 40px auto;
+        padding: 30px;
+
+        background-color: white;
+
+        border-radius: 10px;
+
+        box-shadow: 0px 0px 10px gray;
+
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    label {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    input, select, textarea {
+
+        width: 100%;
+
+        padding: 10px;
+
+        margin-top: 8px;
+        margin-bottom: 18px;
+
+        box-sizing: border-box;
+
+        font-size: 16px;
+
+    }
+
+    textarea {
+        height: 100px;
+    }
+
+    .buttons {
+        text-align: center;
+    }
+
+    button {
+
+        font-size: 18px;
+
+        padding: 10px 25px;
+
+        margin: 5px;
+
+        cursor: pointer;
+
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<div class="form-container">
+
+    <h2>
+        POST NEW PROPERTY
+    </h2>
+
+
+    <form id="propertyForm">
+
+
+        <label>
+            Property Name:
+        </label>
+
+        <input type="text"
+               id="propertyName"
+               placeholder="Enter property name"
+               required>
+
+
+        <label>
+            Property Type:
+        </label>
+
+        <select id="propertyType" required>
+
+            <option value="">
+                Select Property Type
+            </option>
+
+            <option value="Apartment">
+                Apartment
+            </option>
+
+            <option value="House">
+                House
+            </option>
+
+            <option value="Villa">
+                Villa
+            </option>
+
+            <option value="PG">
+                PG
+            </option>
+
+            <option value="Commercial">
+                Commercial
+            </option>
+
+        </select>
+
+
+        <label>
+            Location:
+        </label>
+
+        <input type="text"
+               id="location"
+               placeholder="Enter location"
+               required>
+
+
+        <label>
+            Monthly Rent:
+        </label>
+
+        <input type="number"
+               id="rent"
+               placeholder="Enter monthly rent"
+               required>
+
+
+        <label>
+            Number of Bedrooms:
+        </label>
+
+        <input type="number"
+               id="bedrooms"
+               placeholder="Enter number of bedrooms"
+               required>
+
+
+        <label>
+            Property Description:
+        </label>
+
+        <textarea id="description"
+                  placeholder="Enter property description"
+                  required></textarea>
+
+
+        <label>
+            Property Image:
+        </label>
+
+        <input type="file"
+               id="propertyImage"
+               accept="image/*">
+
+
+        <div class="buttons">
+
+            <button type="submit">
+                POST PROPERTY
+            </button>
+
+            <button type="button"
+                    onclick="window.location.href='Owner-Page.html'">
+                CANCEL
+            </button>
+
+        </div>
+
+
+    </form>
+
+</div>
+
+
+<script>
+
+    document.getElementById("propertyForm")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        alert("Property Posted Successfully!");
+
+        window.location.href = "Owner-Page.html";
+
+    });
+
+</script>
+```
+
+</body>
+
+</html>

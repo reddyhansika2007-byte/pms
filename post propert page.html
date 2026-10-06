@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>PMS - Post Property</title>
+
+</head>
+
+<body style="background-image:url('project-background1.avif');">
+
+<table width="100%">
+
+    <tr>
+
+        <td align="left">
+
+            <img src="logo-project.png" width="180" height="100">
+
+        </td>
+
+        <td align="right">
+
+            <a href="PropertyManagementSystem.html">HOME</a>
+
+            <a href="file:///C:/Users/hansika%20reddy/Desktop/PMS%20project/PMS%20%20project/Owner-Page.html">OWNER HOME</a>
+
+            <a href="Login-Page.html">LOGOUT</a>
+
+        </td>
+
+    </tr>
+
+</table>
+
+<hr>
+
+
+<!-- Page Heading -->
+
+<section align="center">
+
+    <h1>POST YOUR PROPERTY 🏠</h1>
+
+    <p style="font-size:20px;">
+
+        Enter your property details and upload a property photo.
+
+    </p>
+
+</section>
+
+<hr>
+
+
+<!-- Property Form -->
+
+<section align="center">
+
+    <form id="propertyForm">
+
+        <table border="1"
+               width="70%"
+               align="center"
+               cellpadding="15">
+
+            <!-- PHOTO -->
+
+            <tr>
+
+                <th colspan="2">
+
+                    📷 PROPERTY PHOTO
+
+                </th>
+
+            </tr>
+
+            <tr>
+
+                <td>
+
+                    Upload Photo:
+
+                </td>
+
+                <td>
+
+                    <input type="file"
+                           id="propertyPhoto"
+                           accept="image/*">
+
+                </td>
+
+            </tr>
+
+
+            <!-- PROPERTY DETAILS -->
+
+            <tr>
+
+                <th colspan="2">
+
+                    🏠 PROPERTY DETAILS
+
+                </th>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+
+                    Property Name:
+
+                </td>
+
+                <td>
+
+                    <input type="text"
+                           id="propertyName"
+                           placeholder="Enter property name">
+
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+
+                    Location / Area:
+
+                </td>
+
+                <td>
+
+                    <input type="text"
+                           id="location"
+                           placeholder="Enter location">
+
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+
+                    Property Type:
+
+                </td>
+
+                <td>
+
+                    <select id="propertyType">
+
+                        <option value="">Select Type</option>
+
+                        <option value="1 BHK">1 BHK</option>
+
+                        <option value="2 BHK">2 BHK</option>
+
+                        <option value="3 BHK">3 BHK</option>
+
+                        <option value="4 BHK">4 BHK</option>
+
+                        <option value="Villa">Villa</option>
+
+                        <option value="House">House</option>
+
+                        <option value="Apartment">Apartment</option>
+
+                    </select>
+
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+
+                    Area / Size:
+
+                </td>
+
+                <td>
+
+                    <input type="number"
+                           id="area"
+                           placeholder="Enter area">
+
+                    <select id="areaUnit">
+
+                        <option value="sq.ft">sq.ft</option>
+
+                        <option value="sq.yd">sq.yd</option>
+
+                        <option value="sq.m">sq.m</option>
+
+                    </select>
+
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+
+                    Monthly Rent:
+
+                </td>
+
+                <td>
+
+                    <input type="number"
+                           id="rent"
+                           placeholder="Enter monthly rent">
+
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+
+                    Number of Bedrooms:
+
+                </td>
+
+                <td>
+
+                    <input type="number"
+                           id="bedrooms"
+                           placeholder="Enter number">
+
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+
+                    Number of Bathrooms:
+
+                </td>
+
+                <td>
+
+                    <input type="number"
+                           id="bathrooms"
+                           placeholder="Enter number">
+
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>
+
+                    Description:
+
+                </td>
+
+                <td>
+
+                    <textarea id="description"
+                              rows="5"
+                              cols="35"
+                              placeholder="Enter property description"></textarea>
+
+                </td>
+
+            </tr>
+
+
+            <!-- SUBMIT -->
+
+            <tr>
+
+                <td colspan="2" align="center">
+
+                    <button type="submit"
+                            style="font-size:18px;
+                                   padding:10px 30px;">
+
+                        SUBMIT PROPERTY
+
+                    </button>
+
+                </td>
+
+            </tr>
+
+        </table>
+
+    </form>
+
+</section>
+
+<br>
+
+<hr>
+
+
+<!-- Footer -->
+
+<table width="100%">
+
+    <tr>
+
+        <td align="left">
+
+            <img src="logo-project.png"
+                 width="180"
+                 height="100">
+
+        </td>
+
+        <td align="center">
+
+            <a href="#">ABOUT</a>
+
+            <a href="#">CONTACT</a>
+
+        </td>
+
+    </tr>
+
+</table>
+
+
+<script>
+
+let propertyForm =
+    document.getElementById("propertyForm");
+
+
+propertyForm.addEventListener("submit", function(event)
+{
+
+    event.preventDefault();
+
+
+    let propertyName =
+        document.getElementById("propertyName").value.trim();
+
+
+    let location =
+        document.getElementById("location").value.trim();
+
+
+    let propertyType =
+        document.getElementById("propertyType").value;
+
+
+    let area =
+        document.getElementById("area").value.trim();
+
+
+    let areaUnit =
+        document.getElementById("areaUnit").value;
+
+
+    let rent =
+        document.getElementById("rent").value.trim();
+
+
+    let bedrooms =
+        document.getElementById("bedrooms").value.trim();
+
+
+    let bathrooms =
+        document.getElementById("bathrooms").value.trim();
+
+
+    let description =
+        document.getElementById("description").value.trim();
+
+
+    let photo =
+        document.getElementById("propertyPhoto").files[0];
+
+
+    /* Check all details */
+
+    if(propertyName == "" ||
+       location == "" ||
+       propertyType == "" ||
+       area == "" ||
+       rent == "" ||
+       bedrooms == "" ||
+       bathrooms == "" ||
+       description == "")
+    {
+
+        alert("Please fill all the property details!");
+
+        return;
+
+    }
+
+
+    /* Check photo */
+
+    if(photo == null)
+    {
+
+        alert("Please upload a property photo!");
+
+        return;
+
+    }
+
+
+    /*
+       Convert photo to Base64
+       so it can be stored in localStorage.
+    */
+
+    let reader = new FileReader();
+
+
+    reader.onload = function()
+    {
+
+        let properties =
+            JSON.parse(localStorage.getItem("properties")) || [];
+
+
+        let newProperty =
+        {
+
+            id: Date.now(),
+
+            propertyName: propertyName,
+
+            location: location,
+
+            propertyType: propertyType,
+
+            area: area,
+
+            areaUnit: areaUnit,
+
+            rent: rent,
+
+            bedrooms: bedrooms,
+
+            bathrooms: bathrooms,
+
+            description: description,
+
+            photo: reader.result,
+
+            status: "Pending"
+
+        };
+
+
+        properties.push(newProperty);
+
+
+        localStorage.setItem(
+            "properties",
+            JSON.stringify(properties)
+        );
+
+
+        alert("Property submitted successfully!");
+
+        alert("Your property is waiting for Admin approval.");
+
+
+        window.location.href = "Owner.html";
+
+    };
+
+
+    reader.readAsDataURL(photo);
+
+});
+
+</script>
+
+
+</body>
+
+</html>

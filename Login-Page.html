@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Login Page</title>
+</head>
+
+<body style="background-image: url('project-background1.avif');">
+
+```
+<table width="100%">
+    <tr>
+        <td align="left">
+            <img src="logo-project.png" width="180" height="100">
+        </td>
+
+        <td align="right">
+            <a href="#">HOME</a>
+            <a href="#">PROPERTIES</a>
+            <a href="Login-Page.html">LOGIN</a>
+            <a href="Register-Page.html">REGISTER</a>
+        </td>
+    </tr>
+</table>
+
+<hr>
+
+<h2 style="color:black; text-align:center">LOGIN</h2>
+
+<form style="font-size: 22px;">
+
+    <section align="center">
+
+        <label><b>Login As:</b></label>
+
+        <br><br>
+
+        <input type="radio" name="role" value="admin">
+        <label>Admin</label>
+
+        <input type="radio" name="role" value="tenant">
+        <label>Tenant</label>
+
+        <input type="radio" name="role" value="owner">
+        <label>Property Owner</label>
+
+        <br><br><br>
+
+        <label>Email:</label>
+        <br>
+
+        <input type="email"
+               id="email"
+               name="email"
+               placeholder="Enter your email"
+               style="width:350px; height:35px;">
+
+        <br><br>
+
+        <label>Password:</label>
+        <br>
+
+        <input type="password"
+               id="password"
+               name="password"
+               placeholder="Enter your password"
+               style="width:350px; height:35px;">
+
+        <br><br><br>
+
+        <input type="submit"
+               value="LOGIN"
+               style="font-size:20px; padding:10px 35px;">
+
+    </section>
+
+</form>
+
+<br><br>
+
+<p style="font-size:20px; text-align:center;">
+    Don't have an account?
+    <a href="Register-Page.html">Register</a>
+</p>
+
+<hr>
+
+<table width="100%">
+    <tr>
+
+        <td align="left">
+            <img src="logo-project.png" width="180" height="100">
+        </td>
+
+        <td align="center">
+            <a href="#">ABOUT</a>
+            <a href="#">CONTACT</a>
+        </td>
+
+    </tr>
+</table>
+
+
+<script>
+
+    let adminEmail = "nikhitha.kallam@gmail.com";
+    let adminPassword = "admin123";
+
+    let form = document.querySelector("form");
+
+    form.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        let email = document.getElementById("email").value.trim();
+        let password = document.getElementById("password").value.trim();
+
+        let role = document.querySelector(
+            'input[name="role"]:checked'
+        );
+
+
+        if (role == null) {
+
+            alert("Please select your role");
+
+        }
+
+
+        else if (role.value == "admin") {
+
+            if (email === adminEmail && password === adminPassword) {
+
+                alert("Admin Login Successful!");
+
+                window.location.href = "Admin-Page.html";
+
+            }
+
+            else {
+
+                alert("Invalid Admin Email or Password!");
+
+            }
+
+        }
+
+
+        else if (role.value == "owner") {
+
+            if (email != "" && password != "") {
+
+                alert("Property Owner Login Successful!");
+
+                window.location.href = "Owner-Page.html";
+
+            }
+
+            else {
+
+                alert("Please enter email and password!");
+
+            }
+
+        }
+
+
+        else if (role.value == "tenant") {
+
+            if (email != "" && password != "") {
+
+                alert("Tenant Login Successful!");
+
+                window.location.href = "Tenant-Page.html";
+
+            }
+
+            else {
+
+                alert("Please enter email and password!");
+
+            }
+
+        }
+
+    });
+
+</script>
+```
+
+</body>
+
+</html>

@@ -1,0 +1,545 @@
+Tenant-Page.html
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>PMS - Tenant</title>
+</head>
+
+<body style="background-image:url('project-background1.avif');">
+
+<table width="100%">
+
+<tr>
+
+<td align="left">
+3
+<img src="logo-project.png"
+     width="180"
+     height="100">
+
+</td>
+
+<td align="right">
+
+<a href="PropertyManagementSystem.html">HOME</a>
+&nbsp;&nbsp;
+
+<a href="Properties-Page.html">PROPERTIES</a>
+&nbsp;&nbsp;
+
+<a href="My-Rentals.html">MY RENTALS</a>
+&nbsp;&nbsp;
+
+<a href="Login-Page.html">LOGOUT</a>
+
+</td>
+
+</tr>
+
+</table>
+
+<hr>
+
+
+<!-- Welcome Section -->
+
+<section align="center">
+
+<h1>Welcome, Tenant! 🏡</h1>
+
+<p style="font-size:20px;">
+    Find your perfect home with HomeNest.
+</p>
+
+<br>
+
+<form onsubmit="searchProperties(event)">
+
+<input type="text"
+       id="searchLocation"
+       placeholder="Search by location..."
+       style="width:350px; height:35px;">
+
+<button type="submit">
+    SEARCH
+</button>
+
+</form>
+
+</section>
+
+<hr>
+
+
+<!-- Tenant Features -->
+
+<section align="center">
+
+<h2>TENANT FEATURES</h2>
+
+<table width="90%">
+
+<tr>
+
+<td align="center">
+
+<h3>🔎 SEARCH PROPERTIES</h3>
+
+<p style="font-size:18px;">
+
+Find properties based on location,
+type and budget.
+
+</p>
+
+<button onclick="searchButton()">
+    SEARCH
+</button>
+
+</td>
+
+
+<td align="center">
+
+<h3>🏠 VIEW PROPERTIES</h3>
+
+<p style="font-size:18px;">
+
+View available and approved properties.
+
+</p>
+
+<button onclick="viewProperties()">
+    VIEW PROPERTIES
+</button>
+
+</td>
+
+
+<td align="center">
+
+<h3>❤️ SAVED PROPERTIES</h3>
+
+<p style="font-size:18px;">
+
+Save properties that you are interested in.
+
+</p>
+
+<button onclick="viewSavedProperties()">
+    SAVED PROPERTIES
+</button>
+
+</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<hr>
+
+
+<!-- Available Properties -->
+
+<section align="center">
+
+<h2>AVAILABLE PROPERTIES</h2>
+
+<table width="90%">
+
+<tr>
+
+
+<td align="center">
+
+<img src="2BHK.jpg"
+     width="250"
+     height="200">
+
+<h3>2BHK Flat</h3>
+
+<h4>
+LOCATION: Tadepalli, Vijayawada
+</h4>
+
+<h4>
+RENT: ₹26,000
+</h4>
+
+<button onclick="saveProperty(
+    '2BHK Flat',
+    'Tadepalli, Vijayawada',
+    '₹26,000',
+    '2BHK.jpg'
+)">
+    ❤️ SAVE PROPERTY
+</button>
+
+</td>
+
+
+
+<td align="center">
+
+<img src="3BHK.webp"
+     width="250"
+     height="200">
+
+<h3>3BHK Flat</h3>
+
+<h4>
+LOCATION: Tadepalli, Vijayawada
+</h4>
+
+<h4>
+RENT: ₹38,000
+</h4>
+
+<button onclick="saveProperty(
+    '3BHK Flat',
+    'Tadepalli, Vijayawada',
+    '₹38,000',
+    '3BHK.webp'
+)">
+    ❤️ SAVE PROPERTY
+</button>
+
+</td>
+
+
+
+<td align="center">
+
+<img src="4BHK.webp"
+     width="250"
+     height="200">
+
+<h3>4BHK Flat</h3>
+
+<h4>
+LOCATION: Tadepalli, Vijayawada
+</h4>
+
+<h4>
+RENT: ₹47,000
+</h4>
+
+<button onclick="saveProperty(
+    '4BHK Flat',
+    'Tadepalli, Vijayawada',
+    '₹47,000',
+    '4BHK.webp'
+)">
+    ❤️ SAVE PROPERTY
+</button>
+
+</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<hr>
+
+
+<!-- My Rentals -->
+
+<section align="center">
+
+<h2>MY RENTALS</h2>
+
+<p style="font-size:20px;">
+
+View your rented properties and rental information.
+
+</p>
+
+<button onclick="viewRentals()">
+    VIEW MY RENTALS
+</button>
+
+</section>
+
+<br>
+
+
+<!-- Profile -->
+
+<section align="center">
+
+<h2>MY PROFILE</h2>
+
+<p style="font-size:20px;">
+
+Manage your personal information.
+
+</p>
+
+<button onclick="viewProfile()">
+    VIEW PROFILE
+</button>
+
+</section>
+
+<br>
+
+
+<!-- Logout -->
+
+<div align="center">
+
+<button
+onclick="logout()"
+style="font-size:18px; padding:10px 30px;">
+
+LOGOUT
+
+</button>
+
+</div>
+
+<br>
+
+<hr>
+
+
+<!-- Footer -->
+
+<table width="100%">
+
+<tr>
+
+<td align="left">
+
+<img src="logo-project.png"
+     width="180"
+     height="100">
+
+</td>
+
+<td align="center">
+
+<a href="#">ABOUT</a>
+&nbsp;&nbsp;
+
+<a href="#">CONTACT</a>
+
+</td>
+
+</tr>
+
+</table>
+
+
+<script>
+
+
+// LOGOUT
+
+function logout()
+{
+
+    localStorage.removeItem("currentUser");
+
+    alert("Logged Out Successfully!");
+
+    window.location.href = "Login-Page.html";
+
+}
+
+
+
+// VIEW PROPERTIES
+
+function viewProperties()
+{
+
+    window.location.href = "Properties-Page.html";
+
+}
+
+
+
+// SEARCH BUTTON
+
+function searchButton()
+{
+
+    document.getElementById("searchLocation").focus();
+
+}
+
+
+
+// SEARCH PROPERTIES
+
+function searchProperties(event)
+{
+
+    event.preventDefault();
+
+    let location =
+        document.getElementById("searchLocation").value.trim();
+
+
+    if(location == "")
+    {
+        alert("Please enter a location!");
+        return;
+    }
+
+
+    window.location.href =
+        "Properties-Page.html?location=" +
+        encodeURIComponent(location);
+
+}
+
+
+
+// VIEW MY RENTALS
+
+function viewRentals()
+{
+
+    window.location.href = "My-Rentals.html";
+
+}
+
+
+
+// VIEW PROFILE
+
+function viewProfile()
+{
+
+    window.location.href = "Profile.html";
+
+}
+
+
+
+// SAVE PROPERTY
+
+function saveProperty(
+    propertyName,
+    location,
+    rent,
+    photo
+)
+{
+
+    let currentUser =
+        localStorage.getItem("currentUser");
+
+
+    if(currentUser == null)
+    {
+
+        alert("Please login first!");
+
+        window.location.href =
+            "Login-Page.html";
+
+        return;
+
+    }
+
+
+    let savedProperties =
+        JSON.parse(
+            localStorage.getItem("savedProperties")
+        ) || [];
+
+
+    let alreadySaved =
+        savedProperties.find(function(property)
+        {
+
+            return property.email == currentUser &&
+                   property.propertyName == propertyName;
+
+        });
+
+
+    if(alreadySaved)
+    {
+
+        alert("Property is already saved!");
+
+        return;
+
+    }
+
+
+    let property =
+    {
+
+        email: currentUser,
+
+        propertyName: propertyName,
+
+        location: location,
+
+        rent: rent,
+
+        photo: photo
+
+    };
+
+
+    savedProperties.push(property);
+
+
+    localStorage.setItem(
+        "savedProperties",
+        JSON.stringify(savedProperties)
+    );
+
+
+    alert("Property saved successfully! ❤️");
+
+}
+
+
+
+// VIEW SAVED PROPERTIES
+
+function viewSavedProperties()
+{
+
+    let currentUser =
+        localStorage.getItem("currentUser");
+
+
+    if(currentUser == null)
+    {
+
+        alert("Please login first!");
+
+        window.location.href =
+            "Login-Page.html";
+
+        return;
+
+    }
+
+
+    window.location.href =
+        "Saved-Properties.html";
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
